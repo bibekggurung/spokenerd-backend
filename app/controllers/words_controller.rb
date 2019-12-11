@@ -47,6 +47,6 @@ class WordsController < ProtectedController
 
     # Only allow a trusted parameter "white list" through.
     def word_params
-      params.require(:word).permit(:form, :definition, :part_of_speech, :origin_lang)
+      params.require(:word).permit(:form, :definition, :part_of_speech, :origin_lang, :user_id)
     end
 end
