@@ -1,4 +1,4 @@
-class WordsController < ApplicationController
+class WordsController < ProtectedController
   before_action :set_word, only: [:show, :update, :destroy]
 
   # GET /words
