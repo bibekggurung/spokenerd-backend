@@ -1,10 +1,9 @@
-class WordsController < ProtectedController
+class WordsController < OpenReadController
   before_action :set_word, only: [:show, :update, :destroy]
 
   # GET /words
   def index
     @words = Word.all
-
     render json: @words
   end
 
@@ -40,7 +39,7 @@ class WordsController < ProtectedController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_word
+    def set_words
       @word = Word.find(params[:id])
       @word = current_user.word.find(params[:id])
     end
