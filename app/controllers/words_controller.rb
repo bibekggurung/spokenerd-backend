@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 class WordsController < OpenReadController
-  before_action :set_word, only: [:show, :update, :destroy]
+  before_action :set_word, only: %i[show update destroy]
 
   # GET /words
   def index
+    # maybe use current_user.words?
     @words = Word.all
     render json: @words
   end
@@ -14,7 +17,7 @@ class WordsController < OpenReadController
 
   # POST /words
   def create
-    @word = Word.new(word_params)
+    # @word = Word.new(word_params)
     @word = current_user.words.build(word_params)
     if @word.save
       render json: @word, status: :created, location: @word
@@ -38,14 +41,17 @@ class WordsController < OpenReadController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_words
-      @word = Word.find(params[:id])
-      @word = current_user.word.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def word_params
-      params.require(:word).permit(:form, :definition, :part_of_speech, :origin_lang, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_word
+
+    # @word = Word.find(params[:id])
+    # get the word from current_users collection of words
+    @word = current_user.words.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def word_params
+    params.require(:word).permit(:form, :definition, :part_of_speech, :origin_lang, :user_id)
+  end
 end
