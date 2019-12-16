@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class WordsController < OpenReadController
+class WordsController < ProtectedController
   before_action :set_word, only: %i[show update destroy]
 
   # GET /words

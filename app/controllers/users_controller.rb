@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class UsersController < OpenReadController
+class UsersController < ProtectedController
   skip_before_action :authenticate, only: %i[signup signin]
 
   # POST '/sign-up'
