@@ -6,7 +6,7 @@ class WordsController < ProtectedController
   # GET /words
   def index
     # maybe use current_user.words?
-    @words = Word.all
+    @words = current_user.words.all
     render json: @words
   end
 
