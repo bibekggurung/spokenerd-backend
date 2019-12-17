@@ -1,4 +1,6 @@
-SpokeNerd -  A language learning flash card SPA. Within this application, users have the option of creating an account and adding words that they have learned. The words that they add has fields correspoding to the form of the word, the definition, it's part of speech, and the origin language.
+SpokeNerd
+
+A language learning flash card SPA. Within this application, users have the option of creating an account and adding words that they have learned. The words that they add has fields correspoding to the form of the word, the definition, it's part of speech, and the origin language.
 When the user bring up their created words, they appear as flashcards that show the form of the word
 on one side and flip over to the side with the definition, it's part of speech, and the origin language.
 
@@ -9,6 +11,7 @@ The application began as a simple dictionary where the user could create entries
 became a flash card app throuhg the use of bootstrap to implement transitions. Inititally, all resources could be viewed by all users although editing was locked. THis was also changed in the second version of the app, when views were locked. 
 
 Technologies:
+
 Ruby on Rails
 JavaScript
 jQuery
@@ -40,5 +43,7 @@ As a signed in user I should able to bring up a list of my words
 As a signed in user I should be able to edit any entry
 As a signed in user I should be able to delete any entry
 As a signed in user I should be able to sign out
+
 ERD: https://imgur.com/GRNqKJK
+
 Wireframes: https://imgur.com/a/1EpePAs
